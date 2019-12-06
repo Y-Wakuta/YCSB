@@ -17,16 +17,16 @@
 
 package site.ycsb.db;
 
-import com.google.api.client.auth.oauth2.Credential;
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.datastore.v1.*;
-import com.google.datastore.v1.CommitRequest.Mode;
-import com.google.datastore.v1.ReadOptions.ReadConsistency;
-import com.google.datastore.v1.client.Datastore;
-import com.google.datastore.v1.client.DatastoreException;
-import com.google.datastore.v1.client.DatastoreFactory;
-import com.google.datastore.v1.client.DatastoreHelper;
-import com.google.datastore.v1.client.DatastoreOptions;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DatastoreException;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.PathElement;
+import com.google.cloud.datastore.ReadOption;
+import com.google.cloud.datastore.StringValue;
+import com.google.cloud.datastore.Value;
 
 import site.ycsb.ByteIterator;
 import site.ycsb.DB;
@@ -157,15 +157,23 @@ public class GoogleDatastoreClient extends DB {
     // Setup the connection to Google Cloud Datastore with the credentials
     // obtained from the configure.
     //if (serviceAccountEmail != null && privateKeyFile != null) {
-    //  credential = GoogleCredentials..getServiceAccountCredential(
-    //      serviceAccountEmail, privateKeyFile);
+    //  ServiceAccountCredentials.Builder serviceAccountBuilder = ServiceAccountCredentials.newBuilder();
+    //  serviceAccountBuilder.setClientEmail(serviceAccountEmail);
+
+    //  String privateKey = null;
+    //  try {
+    //    privateKey = Files.lines(Paths.get(privateKeyFile)).toString();
+    //  } catch(IOException ioexeception){
+    //    System.out.println("cannot read from private key file");
+    //  }
+    //  serviceAccountBuilder.setp(privateKey);
     //  logger.info("Using JWT Service Account credential.");
     //  logger.info("DatasetID: " + datasetId + ", Service Account Email: " +
     //      serviceAccountEmail + ", Private Key File Path: " + privateKeyFile);
     //} else {
     //  logger.info("Using default gcloud credential.");
     //  logger.info("DatasetID: " + datasetId
-    //      + ", Service Account Email: " + ((GoogleCredential) credential).getServiceAccountId());
+    //      + ", Service Account Email: " + DatastoreOptions.get.getServiceAccountId());
     //}
 
     datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -277,7 +285,7 @@ public class GoogleDatastoreClient extends DB {
       // Catch all Datastore rpc errors.
       // Log the exception, the name of the method called and the error code.
       logger.error(
-          String.format("Datastore Exception when committing (%s): %s %s",
+          String.format("Datastore Exception when committing (%s): %s",
               exception.getMessage(),
               exception.getCode()));
 
