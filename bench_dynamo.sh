@@ -27,7 +27,7 @@ function bench_dynamo(){
   aws dynamodb delete-table --table-name $table --endpoint-url $host
   sleep 5
   aws dynamodb list-tables --endpoint-url $host
-  aws dynamodb create-table --table-name $table --attribute-definitions AttributeName=firstname,AttributeType=S --key-schema AttributeName=firstname,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 --endpoint-url $host
+  aws dynamodb create-table --table-name $table --attribute-definitions AttributeName=firstname,AttributeType=S --key-schema AttributeName=firstname,KeyType=HASH --billing-mode=PAY_PER_REQUEST --endpoint-url $host
   
   echo "=loading======================================" > $file
   ./bin/ycsb load dynamodb -P $workload -P $property_file -threads $threads >> $file
