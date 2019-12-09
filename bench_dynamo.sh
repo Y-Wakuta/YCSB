@@ -9,13 +9,18 @@ host=https://dynamodb.ap-northeast-1.amazonaws.com
 
 property_file=./dynamodb/conf/dynamodb.properties
 table=usertable
-workload_name=workload_10_contents
-workload=workloads/$workload_name
+workload_name_10_100k=workload_10_contents_100k_ops
+workload_name_10_300k=workload_10_contents_300k_ops
+workload_name_30_100k=workload_30_contents_100k_ops
+workload_name_30_300k=workload_30_contents_300k_ops
+
 dir=result_dynamo
 
 function bench_dynamo(){
   sleep 15
   threads=$1
+  workload_name=$2
+  workload=workloads/$workload_name
   file=$dir/bench_dynamo_result_${workload_name}_$threads.txt
   echo "= evaluation in $threads"
   echo "= setup db ======================================"
@@ -32,6 +37,15 @@ function bench_dynamo(){
 
 mkdir -p $dir
 #aws dynamodb create-table --table-name $table --attribute-definitions AttributeName=firstname,AttributeType=S --key-schema AttributeName=firstname,KeyType=HASH --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 --endpoint-url $host
-bench_dynamo 2
-bench_dynamo 4
-bench_dynamo 8
+
+function bench_for_workload(){
+  workload_name=$1
+  bench_dynamo 2 $workload_name
+  bench_dynamo 4 $workload_name
+  bench_dynamo 8 $workload_name
+}
+
+bench_for_workload $workload_name_10_100k
+bench_for_workload $workload_name_10_300k
+bench_for_workload $workload_name_30_100k
+bench_for_workload $workload_name_30_300k
