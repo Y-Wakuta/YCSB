@@ -13,22 +13,28 @@ dir="./result_datastore_mode_with_warmup"
 function warmup(){
    warm_up_workload=workloads/$1
    echo "warmup 1======================================"
-  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties
-  sleep 150
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
    echo "warmup 2======================================"
-  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties
-  sleep 150
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
    echo "warmup 3======================================"
-  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 2
-  sleep 150
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
    echo "warmup 4======================================"
-  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 4
-  sleep 150
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
    echo "warmup 5======================================"
-  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 8
-  sleep 150
-  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 8
-  sleep 150
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
+  sleep 20
+  ./bin/ycsb load googledatastore -P $warm_up_workload -P ../googledatastore.properties -threads 100
 }
 
 function bench_datastore(){
@@ -52,9 +58,9 @@ function bench_datastore(){
 
 function bench_for_workload(){
   workload_name=$1
-  bench_datastore 2 $workload_name
-  bench_datastore 4 $workload_name
-  bench_datastore 8 $workload_name
+  bench_datastore 100 $workload_name
+  #bench_datastore 4 $workload_name
+  #bench_datastore 8 $workload_name
 }
 
 warmup $warm_up_workload_name
