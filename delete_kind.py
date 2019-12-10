@@ -10,8 +10,8 @@ client = datastore.Client()
 #entity = datastore.Entity(key)
 #client.put(entity)
 
-query = client.query(kind=kind)
-print(list(query.fetch()))
+#query = client.query(kind=kind)
+#print(list(query.fetch()))
 
 query = client.query(kind=kind)
 query.keys_only()
