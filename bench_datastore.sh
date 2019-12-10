@@ -6,9 +6,10 @@ workload_name_10_100k=workload_10_contents_100k_ops
 workload_name_10_300k=workload_10_contents_300k_ops
 workload_name_30_100k=workload_30_contents_100k_ops
 workload_name_30_300k=workload_30_contents_300k_ops
-dir="./result_datastore"
 
-function bench_bigtable(){
+dir="./result_datastore_mode"
+
+function bench_datastore(){
   threads=$1
   workload_name=$2
   workload=workloads/$workload_name
@@ -16,14 +17,15 @@ function bench_bigtable(){
   
   mkdir -p $dir
   echo "clear entities"
-  python3 delete_kind.py
-  sleep 15
+  python3 delete_kind.py usertable
+  sleep 3
   
   echo "=loading======================================" > $file
-  ./bin/ycsb load googledatastore -P $workload -P ../googledatastore.properties -threads $threads >> $file
+  ./bin/ycsb load googledatastore -P $workload -P ../googledatastore.properties -threads $threads >> $file 2>&1
   
+  sleep 30
   echo "=running======================================" >> $file
-  ./bin/ycsb run googledatastore -P $workload -P ../googledatastore.properties -threads $threads >> $file
+  ./bin/ycsb run googledatastore -P $workload -P ../googledatastore.properties -threads $threads >> $file 2>&1
 }
 
 function bench_for_workload(){

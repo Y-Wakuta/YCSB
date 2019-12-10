@@ -1,0 +1,156 @@
+=loading======================================
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:googledatastore-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /home/yusuke.wakuta/YCSB/googledatastore/conf:/home/yusuke.wakuta/YCSB/googledatastore/target/googledatastore-binding-0.18.0-SNAPSHOT.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/datastore/datastore-v1-proto-client/1.6.0/datastore-v1-proto-client-1.6.0.jar:/home/yusuke.wakuta/.m2/repository/org/threeten/threetenbp/1.3.3/threetenbp-1.3.3.jar:/home/yusuke.wakuta/.m2/repository/com/google/protobuf/protobuf-java/3.7.1/protobuf-java-3.7.1.jar:/home/yusuke.wakuta/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/home/yusuke.wakuta/.m2/repository/io/grpc/grpc-core/1.21.0/grpc-core-1.21.0.jar:/home/yusuke.wakuta/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/yusuke.wakuta/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/grpc/proto-google-common-protos/1.16.0/proto-google-common-protos-1.16.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/google-cloud-core/1.83.0/google-cloud-core-1.83.0.jar:/home/yusuke.wakuta/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/home/yusuke.wakuta/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.9/jackson-core-2.9.9.jar:/home/yusuke.wakuta/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/yusuke.wakuta/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/home/yusuke.wakuta/.m2/repository/io/grpc/grpc-context/1.19.0/grpc-context-1.19.0.jar:/home/yusuke.wakuta/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/gax-httpjson/0.64.1/gax-httpjson-0.64.1.jar:/home/yusuke.wakuta/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-jackson/1.20.0/google-http-client-jackson-1.20.0.jar:/home/yusuke.wakuta/.m2/repository/io/opencensus/opencensus-contrib-grpc-metrics/0.21.0/opencensus-contrib-grpc-metrics-0.21.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/google-cloud-core-http/1.83.0/google-cloud-core-http-1.83.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/oauth-client/google-oauth-client/1.20.0/google-oauth-client-1.20.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/grpc/proto-google-iam-v1/0.12.0/proto-google-iam-v1-0.12.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/auth/google-auth-library-oauth2-http/0.16.2/google-auth-library-oauth2-http-0.16.2.jar:/home/yusuke.wakuta/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/api-client/google-api-client/1.30.2/google-api-client-1.30.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/home/yusuke.wakuta/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/yusuke.wakuta/.m2/repository/org/apache/httpcomponents/httpclient/4.5.8/httpclient-4.5.8.jar:/home/yusuke.wakuta/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/api-common/1.8.1/api-common-1.8.1.jar:/home/yusuke.wakuta/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.21.0/opencensus-contrib-http-util-0.21.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-protobuf/1.20.0/google-http-client-protobuf-1.20.0.jar:/home/yusuke.wakuta/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/home/yusuke.wakuta/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/yusuke.wakuta/.m2/repository/io/opencensus/opencensus-api/0.21.0/opencensus-api-0.21.0.jar:/home/yusuke.wakuta/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.4/jackson-mapper-asl-1.9.4.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-appengine/1.30.1/google-http-client-appengine-1.30.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/google-cloud-datastore/1.83.0/google-cloud-datastore-1.83.0.jar:/home/yusuke.wakuta/.m2/repository/io/grpc/grpc-api/1.21.0/grpc-api-1.21.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar:/home/yusuke.wakuta/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/home/yusuke.wakuta/.m2/repository/com/google/guava/guava/28.0-android/guava-28.0-android.jar:/home/yusuke.wakuta/.m2/repository/com/google/protobuf/protobuf-java-util/3.7.1/protobuf-java-util-3.7.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/gax/1.47.1/gax-1.47.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/auth/google-auth-library-credentials/0.16.2/google-auth-library-credentials-0.16.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client/1.30.1/google-http-client-1.30.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/grpc/proto-google-cloud-datastore-v1/0.66.0/proto-google-cloud-datastore-v1-0.66.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-jackson2/1.30.1/google-http-client-jackson2-1.30.1.jar site.ycsb.Client -db site.ycsb.db.GoogleDatastoreClient -P workloads/workload_10_contents_300k_ops -P ../googledatastore.properties -threads 8 -load
+Command line: -db site.ycsb.db.GoogleDatastoreClient -P workloads/workload_10_contents_300k_ops -P ../googledatastore.properties -threads 8 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+Starting test.
+0    [Thread-1] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@589bcc6a
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2    [Thread-8] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@1c4d3f1b
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2    [Thread-4] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@302231a2
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []2    [Thread-6] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@14e2c953
+
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2    [Thread-2] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@5306d092
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []2    [Thread-5] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@10273317
+2    [Thread-7] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@5ade2003
+2    [Thread-3] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@a558429
+
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+1144 [Thread-8] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1147 [Thread-6] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1147 [Thread-2] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1148 [Thread-4] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1148 [Thread-1] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1147 [Thread-5] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1147 [Thread-7] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+1148 [Thread-3] ERROR site.ycsb.db.GoogleDatastoreClient  -Datastore Exception when committing (Missing or insufficient permissions.): 7
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+Error inserting, not retrying any more. number of attempts: 1Insertion Retry Limit: 0
+[OVERALL], RunTime(ms), 1559
+[OVERALL], Throughput(ops/sec), 0.0
+[TOTAL_GCS_PS_Scavenge], Count, 1
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 12
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.7697241821680565
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 12
+[TOTAL_GC_TIME_%], Time(%), 0.7697241821680565
+[CLEANUP], Operations, 8
+[CLEANUP], AverageLatency(us), 0.375
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 3
+[CLEANUP], 95thPercentileLatency(us), 3
+[CLEANUP], 99thPercentileLatency(us), 3
+[INSERT], Operations, 0
+[INSERT], AverageLatency(us), NaN
+[INSERT], MinLatency(us), 9223372036854775807
+[INSERT], MaxLatency(us), 0
+[INSERT], 95thPercentileLatency(us), 0
+[INSERT], 99thPercentileLatency(us), 0
+[INSERT], Return=ERROR-7, 8
+[INSERT-FAILED], Operations, 8
+[INSERT-FAILED], AverageLatency(us), 1143936.0
+[INSERT-FAILED], MinLatency(us), 1140736
+[INSERT-FAILED], MaxLatency(us), 1144831
+[INSERT-FAILED], 95thPercentileLatency(us), 1144831
+[INSERT-FAILED], 99thPercentileLatency(us), 1144831
+=running======================================
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:googledatastore-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+java -cp /home/yusuke.wakuta/YCSB/googledatastore/conf:/home/yusuke.wakuta/YCSB/googledatastore/target/googledatastore-binding-0.18.0-SNAPSHOT.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/datastore/datastore-v1-proto-client/1.6.0/datastore-v1-proto-client-1.6.0.jar:/home/yusuke.wakuta/.m2/repository/org/threeten/threetenbp/1.3.3/threetenbp-1.3.3.jar:/home/yusuke.wakuta/.m2/repository/com/google/protobuf/protobuf-java/3.7.1/protobuf-java-3.7.1.jar:/home/yusuke.wakuta/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.4/HdrHistogram-2.1.4.jar:/home/yusuke.wakuta/.m2/repository/io/grpc/grpc-core/1.21.0/grpc-core-1.21.0.jar:/home/yusuke.wakuta/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/yusuke.wakuta/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/grpc/proto-google-common-protos/1.16.0/proto-google-common-protos-1.16.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/google-cloud-core/1.83.0/google-cloud-core-1.83.0.jar:/home/yusuke.wakuta/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/home/yusuke.wakuta/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.9/jackson-core-2.9.9.jar:/home/yusuke.wakuta/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/yusuke.wakuta/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.17/animal-sniffer-annotations-1.17.jar:/home/yusuke.wakuta/.m2/repository/io/grpc/grpc-context/1.19.0/grpc-context-1.19.0.jar:/home/yusuke.wakuta/.m2/repository/org/apache/htrace/htrace-core4/4.1.0-incubating/htrace-core4-4.1.0-incubating.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/gax-httpjson/0.64.1/gax-httpjson-0.64.1.jar:/home/yusuke.wakuta/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-jackson/1.20.0/google-http-client-jackson-1.20.0.jar:/home/yusuke.wakuta/.m2/repository/io/opencensus/opencensus-contrib-grpc-metrics/0.21.0/opencensus-contrib-grpc-metrics-0.21.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/google-cloud-core-http/1.83.0/google-cloud-core-http-1.83.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/oauth-client/google-oauth-client/1.20.0/google-oauth-client-1.20.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/grpc/proto-google-iam-v1/0.12.0/proto-google-iam-v1-0.12.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/auth/google-auth-library-oauth2-http/0.16.2/google-auth-library-oauth2-http-0.16.2.jar:/home/yusuke.wakuta/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/api-client/google-api-client/1.30.2/google-api-client-1.30.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.2/error_prone_annotations-2.3.2.jar:/home/yusuke.wakuta/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/yusuke.wakuta/.m2/repository/org/apache/httpcomponents/httpclient/4.5.8/httpclient-4.5.8.jar:/home/yusuke.wakuta/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/api-common/1.8.1/api-common-1.8.1.jar:/home/yusuke.wakuta/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.21.0/opencensus-contrib-http-util-0.21.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-protobuf/1.20.0/google-http-client-protobuf-1.20.0.jar:/home/yusuke.wakuta/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.4/jackson-core-asl-1.9.4.jar:/home/yusuke.wakuta/YCSB/core/target/core-0.18.0-SNAPSHOT.jar:/home/yusuke.wakuta/.m2/repository/io/opencensus/opencensus-api/0.21.0/opencensus-api-0.21.0.jar:/home/yusuke.wakuta/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.4/jackson-mapper-asl-1.9.4.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-appengine/1.30.1/google-http-client-appengine-1.30.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/cloud/google-cloud-datastore/1.83.0/google-cloud-datastore-1.83.0.jar:/home/yusuke.wakuta/.m2/repository/io/grpc/grpc-api/1.21.0/grpc-api-1.21.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar:/home/yusuke.wakuta/.m2/repository/org/apache/httpcomponents/httpcore/4.4.11/httpcore-4.4.11.jar:/home/yusuke.wakuta/.m2/repository/com/google/guava/guava/28.0-android/guava-28.0-android.jar:/home/yusuke.wakuta/.m2/repository/com/google/protobuf/protobuf-java-util/3.7.1/protobuf-java-util-3.7.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/gax/1.47.1/gax-1.47.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/auth/google-auth-library-credentials/0.16.2/google-auth-library-credentials-0.16.2.jar:/home/yusuke.wakuta/.m2/repository/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client/1.30.1/google-http-client-1.30.1.jar:/home/yusuke.wakuta/.m2/repository/com/google/api/grpc/proto-google-cloud-datastore-v1/0.66.0/proto-google-cloud-datastore-v1-0.66.0.jar:/home/yusuke.wakuta/.m2/repository/com/google/http-client/google-http-client-jackson2/1.30.1/google-http-client-jackson2-1.30.1.jar site.ycsb.Client -db site.ycsb.db.GoogleDatastoreClient -P workloads/workload_10_contents_300k_ops -P ../googledatastore.properties -threads 8 -t
+Command line: -db site.ycsb.db.GoogleDatastoreClient -P workloads/workload_10_contents_300k_ops -P ../googledatastore.properties -threads 8 -t
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+Starting test.
+0    [Thread-4] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@709732ad
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+3    [Thread-1] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@2a151a50
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+3    [Thread-6] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@7e4b8a2a
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+4    [Thread-8] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@6b9e4dcc
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+4    [Thread-2] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@29ade598
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+5    [Thread-5] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@789cabdd
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+6    [Thread-7] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@5e6b0e4e
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+6    [Thread-3] INFO  site.ycsb.db.GoogleDatastoreClient  -Datastore client instance created: com.google.cloud.datastore.DatastoreImpl@1feebd33
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+java.util.MissingFormatArgumentException: Format specifier '%s'
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at site.ycsb.db.GoogleDatastoreClient.read(GoogleDatastoreClient.java:196)
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+java.util.MissingFormatArgumentException: Format specifier '%s'java.util.MissingFormatArgumentException: Format specifier '%s'
+
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.util.Formatter.format(Formatter.java:2455)	at java.util.Formatter.format(Formatter.java:2519)
+	at java.lang.String.format(String.java:2940)
+
+	at java.util.Formatter.format(Formatter.java:2455)	at site.ycsb.db.GoogleDatastoreClient.read(GoogleDatastoreClient.java:196)
+
+	at java.lang.String.format(String.java:2940)	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)	at site.ycsb.db.GoogleDatastoreClient.read(GoogleDatastoreClient.java:196)
+
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)	at site.ycsb.ClientThread.run(ClientThread.java:122)
+
+	at java.lang.Thread.run(Thread.java:748)	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+java.util.MissingFormatArgumentException: Format specifier '%s'
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at site.ycsb.db.GoogleDatastoreClient.read(GoogleDatastoreClient.java:196)
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)java.util.MissingFormatArgumentException: Format specifier '%s'
+
+	at java.lang.Thread.run(Thread.java:748)
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at site.ycsb.db.GoogleDatastoreClient.read(GoogleDatastoreClient.java:196)
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+java.util.MissingFormatArgumentException: Format specifier '%s'
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at site.ycsb.db.GoogleDatastoreClient.read(GoogleDatastoreClient.java:196)
+	at site.ycsb.DBWrapper.read(DBWrapper.java:135)
+	at site.ycsb.workloads.CoreWorkload.doTransactionRead(CoreWorkload.java:722)
+	at site.ycsb.workloads.CoreWorkload.doTransaction(CoreWorkload.java:644)
+	at site.ycsb.ClientThread.run(ClientThread.java:122)
+	at java.lang.Thread.run(Thread.java:748)

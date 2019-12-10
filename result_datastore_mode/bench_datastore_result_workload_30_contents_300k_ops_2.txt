@@ -1,0 +1,17 @@
+=loading======================================
+[WARN]  Running against a source checkout. In order to get our runtime dependencies we'll have to invoke Maven. Depending on the state of your system, this may take ~30-45 seconds
+[DEBUG]  Running 'mvn -pl site.ycsb:googledatastore-binding -am package -DskipTests dependency:build-classpath -DincludeScope=compile -Dmdep.outputFilterFile=true'
+Traceback (most recent call last):
+  File "./bin/ycsb", line 332, in <module>
+    sys.exit(main())
+  File "./bin/ycsb", line 305, in main
+    maven_says = get_classpath_from_maven(project)
+  File "./bin/ycsb", line 220, in get_classpath_from_maven
+    "-Dmdep.outputFilterFile=true"])
+  File "./bin/ycsb", line 170, in check_output
+    output, unused_err = process.communicate()
+  File "/usr/lib/python2.7/subprocess.py", line 471, in communicate
+    stdout = _eintr_retry_call(self.stdout.read)
+  File "/usr/lib/python2.7/subprocess.py", line 121, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
