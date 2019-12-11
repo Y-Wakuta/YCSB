@@ -6,11 +6,6 @@ host=https://dynamodb.ap-northeast-1.amazonaws.com
 threads=100
 property_file=./dynamodb/conf/dynamodb.properties
 table=usertable
-workload_name_10_100k=workload_10_contents_100k_ops
-workload_name_10_300k=workload_10_contents_300k_ops
-workload_name_30_100k=workload_30_contents_100k_ops
-workload_name_30_300k=workload_30_contents_300k_ops
-
 dir='result_dynamo_100_threads_12_11'
 
 function bench_dynamo(){
@@ -34,7 +29,7 @@ function bench_dynamo(){
 }
 
 mkdir -p $dir
-bench_dynamo $workload_name_10_100k
-bench_dynamo $workload_name_10_300k
-bench_dynamo $workload_name_30_100k
-bench_dynamo $workload_name_30_300k
+bench_dynamo workload_10_contents_100k_ops
+bench_dynamo workload_10_contents_300k_ops
+bench_dynamo workload_30_contents_100k_ops
+bench_dynamo workload_30_contents_300k_ops
